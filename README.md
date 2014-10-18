@@ -40,6 +40,14 @@ How to use
 2. Open empathy-accounts or gnome-online-accounts
 3. Add vk account
 
+If you have troubles adding your account in KDE, add via command line:
+
+```
+mc-tool add eri/vk komzpa string:account=user@email_provi.der string:password=pAsSw0rD
+```
+
+
+
 How to remove
 -------------
 
