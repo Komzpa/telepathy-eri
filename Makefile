@@ -34,16 +34,7 @@ tlp_gen_DATA = $(tp_py)/src/_generated/*.py
 
 utils_DATA = utils/*.py
 
-all: submodule $(exec_DATA) $(service_DATA)
-
-submodule:
-	@git submodule update --init
-	@bash -c " \
-            pushd telepathy-python/; \
-            make distclean; \
-            ./autogen.sh; \
-            make; \
-            popd"
+all: $(exec_DATA) $(service_DATA)
 
 $(exec_DATA): $(exec_in_files)
 	@sed -e "s|\@MODULESDIR\@|$(MODULESDIR)|" $< > $@
@@ -79,7 +70,6 @@ install:
 clean:
 	$(RM)               $(service_DATA)
 	$(RM)               $(exec_DATA)
-	@git submodule deinit -f .
 
 uninstall:
 	$(RM)               $(DESTDIR)$(LIBEXECDIR)/telepathy-eri

@@ -22,6 +22,13 @@ How to install
 --------------
 
 ```
+$ git submodule update --init
+$ pushd telepathy-python/
+$ make distclean
+$ ./autogen.sh
+$ make
+$ popd
+
 $ make
 # make install
 ```
@@ -43,10 +50,10 @@ How to remove
 Some ubuntu-specific notes
 ---------------------------
 
-For 12.10+ bubuntus copy files from accounts/* to /usr/share/accounts in order to use with online-accounts
+For 12.10+ ubuntus copy files from accounts/* to /usr/share/accounts in order to use with online-accounts
 
-Token authorize
----------------
+Token authorization
+-------------------
 
 At adding account use wrong password.
 
